@@ -1,0 +1,404 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* El Profesorito Design System - Spanish Flag Inspired Colors
+All colors MUST be HSL for RTL Arabic educational website.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    /* Spanish Flag Red - Primary Brand Color */
+    --primary: 358 75% 27%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Spanish Flag Yellow - Secondary/Accent */
+    --secondary: 46 100% 50%;
+    --secondary-foreground: 0 0% 15%;
+    --spanish-yellow: 46 100% 50%;
+    --spanish-yellow-light: 46 100% 85%;
+
+    /* Spanish Flag Red Variants */
+    --spanish-red: 358 75% 27%;
+    --spanish-red-light: 358 75% 85%;
+    --spanish-red-dark: 358 75% 20%;
+
+    /* Spanish Navy/Dark Blue for Professional Touch */
+    --spanish-navy: 214 100% 21%;
+    --spanish-navy-light: 214 100% 85%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 46 100% 50%;
+    --accent-foreground: 0 0% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 358 75% 27%;
+
+    /* Custom Gradients */
+    --gradient-spain: linear-gradient(135deg, hsl(var(--spanish-red)), hsl(var(--spanish-yellow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--spanish-red)) 0%, hsl(var(--spanish-yellow)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--spanish-yellow-light)) 100%);
+    
+    /* Shadows */
+    --shadow-spanish: 0 10px 30px -10px hsl(var(--spanish-red) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--spanish-yellow) / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cairo', 'IBM Plex Arabic', 'Tajawal', sans-serif;
+  }
+
+  /* Direction-based styles */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  [dir="ltr"] {
+    text-align: left;
+  }
+
+  /* Smooth scrolling for navigation */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Utility Classes */
+  .gradient-spain {
+    background: var(--gradient-spain);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-spanish {
+    box-shadow: var(--shadow-spanish);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Spanish Flag Animation */
+  .flag-wave {
+    background: linear-gradient(90deg, 
+      hsl(var(--spanish-red)) 0%, 
+      hsl(var(--spanish-red)) 25%, 
+      hsl(var(--spanish-yellow)) 25%, 
+      hsl(var(--spanish-yellow)) 75%, 
+      hsl(var(--spanish-red)) 75%, 
+      hsl(var(--spanish-red)) 100%);
+    animation: wave 3s ease-in-out infinite;
+  }
+
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  /* Hero text effects */
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--spanish-yellow) / 0.5);
+  }
+
+  /* Hover effects for cards */
+  .card-hover {
+    transition: var(--transition-smooth);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-spanish);
+  }
+
+  /* Arabic number styling */
+  .arabic-numbers {
+    font-feature-settings: "tnum" on;
+  }
+
+  /* Language-specific styles */
+  .lang-es {
+    direction: ltr;
+  }
+
+  .lang-ar {
+    direction: rtl;
+  }
+
+  /* Direction-based layout adjustments */
+  [dir="ltr"] {
+    text-align: left;
+  }
+
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Flex direction adjustments */
+  [dir="ltr"] .flex-row-reverse {
+    flex-direction: row;
+  }
+
+  [dir="rtl"] .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  /* RTL/LTR specific adjustments */
+  [dir="rtl"] .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+  }
+
+  [dir="ltr"] .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+  }
+
+  /* Text alignment adjustments */
+  .lang-es .text-right {
+    text-align: left;
+  }
+
+  .lang-ar .text-right {
+    text-align: right;
+  }
+
+  .lang-es .text-center {
+    text-align: center;
+  }
+
+  .lang-ar .text-center {
+    text-align: center;
+  }
+
+  /* Responsive text alignment for Spanish (LTR) */
+  .lang-es .lg\\:text-right {
+    text-align: left;
+  }
+
+  .lang-ar .lg\\:text-right {
+    text-align: right;
+  }
+
+  .lang-es .md\\:text-right {
+    text-align: left;
+  }
+
+  .lang-ar .md\\:text-right {
+    text-align: right;
+  }
+
+  /* Flex alignment adjustments */
+  .lang-es .justify-center.lg\\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .lang-ar .justify-center.lg\\:justify-start {
+    justify-content: flex-end;
+  }
+
+  @media (min-width: 1024px) {
+    .lang-es .lg\\:justify-start {
+      justify-content: flex-start;
+    }
+
+    .lang-ar .lg\\:justify-start {
+      justify-content: flex-end;
+    }
+
+    .lang-es .lg\\:text-left {
+      text-align: left;
+    }
+
+    .lang-ar .lg\\:text-left {
+      text-align: right;
+    }
+  }
+
+  /* Icon positioning for RTL/LTR */
+  .lang-es .ml-2 {
+    margin-left: 0.5rem;
+    margin-right: 0;
+  }
+
+  .lang-ar .ml-2 {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+
+  .lang-es .mr-2 {
+    margin-right: 0.5rem;
+    margin-left: 0;
+  }
+
+  .lang-ar .mr-2 {
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+
+  /* Auto margin adjustments for Spanish */
+  .lang-es .mx-auto.lg\\:mr-0 {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .lang-ar .mx-auto.lg\\:mr-0 {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  /* Button positioning adjustments */
+  .lang-es .space-x-reverse {
+    direction: ltr;
+  }
+
+  .lang-ar .space-x-reverse {
+    direction: rtl;
+  }
+
+  /* Navigation alignment */
+  .lang-es nav {
+    text-align: left;
+  }
+
+  .lang-ar nav {
+    text-align: right;
+  }
+
+  /* Card content alignment */
+  .lang-es .card {
+    text-align: left;
+  }
+
+  .lang-ar .card {
+    text-align: right;
+  }
+
+  /* Force LTR layout for Spanish */
+  .lang-es * {
+    direction: ltr !important;
+  }
+
+  /* Force RTL layout for Arabic */
+  .lang-ar * {
+    direction: rtl !important;
+  }
+
+  /* Testimonials carousel animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .testimonial-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  /* Force Arabic to look exactly like Spanish - NO RTL */
+  .lang-ar * {
+    direction: ltr !important;
+    text-align: left !important;
+  }
+
+  .lang-ar {
+    direction: ltr !important;
+    text-align: left !important;
+  }
+}
